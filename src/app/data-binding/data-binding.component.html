@@ -1,0 +1,46 @@
+<h2>Data Biding</h2>
+<h3>1. Interpolation (one-way)</h3>
+<!-- <p>Họ tên: {{ fullName }}</p>
+<p>Tuổi: {{ age }}</p>
+<p>Tình trạng hôn nhân: {{ isMarried ? 'Đã kết hôn' : 'Chưa kết hôn' }}</p> -->
+
+<p>Họ tên: {{ person.fullName }}</p>
+<p>Tuổi: {{ person.age }}</p>
+<p>
+  Tình trạng hôn nhân: {{ person.isMarried ? "Đã kết hôn" : "Chưa kết hôn" }}
+</p>
+
+<img src="{{ imgSrc }}" alt="" />
+
+<p>{{ showInfo() }}</p>
+
+<br />
+<br />
+
+<h3>2. Property Binding (one-way)</h3>
+<img [src]="imgSrc" alt="" />
+<br />
+<br />
+<button class="btn btn-danger" [disabled]="isDisabled">Hello</button>
+
+<br />
+<br />
+
+<h3>3. Event Binding (one-way)</h3>
+<button class="btn btn-primary" (click)="clickMe()">Click Me!</button>
+
+<!-- <div class="form-group">
+  <label>Email</label>
+  <input type="text" class="form-control" (keyup)="getEmail($event)">
+  <p>Email: {{ email }}</p>
+</div> -->
+
+<br />
+<br />
+
+<h3>4. Two Way Binding</h3>
+<div class="form-group">
+  <label>Email</label>
+  <input type="text" class="form-control" [(ngModel)]="email" />
+  <p>Email: {{ email }}</p>
+</div>
