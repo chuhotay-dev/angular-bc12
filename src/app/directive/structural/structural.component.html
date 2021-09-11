@@ -1,0 +1,132 @@
+<h1>{{ title }}</h1>
+
+<!-- *ngIf -->
+<h3>1. *ngIf</h3>
+
+<br />
+
+<button *ngIf="!isLoggedIn" class="btn btn-success" (click)="login()">
+  Login
+</button>
+
+<div *ngIf="isLoggedIn">
+  <p>Username: {{ username }}</p>
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>
+
+<br />
+
+<div class="form-group">
+  <label></label>
+  <input type="text" class="form-control" [(ngModel)]="age" />
+</div>
+
+<!-- <p *ngIf="age >= 18">Đã đủ tuổi</p>
+<p *ngIf="age < 18">Chưa đủ tuổi</p> -->
+
+<p *ngIf="age >= 18; else isNotOldEnoughBlock">Đã đủ tuổi</p>
+
+<ng-template #isNotOldEnoughBlock>
+  <p>Chưa đủ tuổi</p>
+</ng-template>
+
+<br />
+
+<!-- *ngFor -->
+<h3>2. *ngFor</h3>
+
+<br />
+
+<ng-container *ngIf="rappers.length > 0">
+  <ul class="list-group">
+    <li
+      *ngFor="
+        let rapper of rappers;
+        index as idx;
+        count as length;
+        first as isFirst;
+        last as isLast;
+        even as isEven;
+        odd as isOdd
+      "
+      class="list-group-item"
+    >
+      {{ rapper }}
+      {{ idx }}
+      {{ length }}
+      {{ isFirst }}
+      {{ isLast }}
+      {{ isEven }}
+      {{ isOdd }}
+    </li>
+  </ul>
+</ng-container>
+
+<br />
+
+<h4>Bài tập thêm sinh viên</h4>
+
+<br />
+
+<div class="form-group">
+  <label>Mã sinh viên</label>
+  <input type="text" class="form-control" #maSV />
+</div>
+<div class="form-group">
+  <label>Tên sinh viên</label>
+  <input type="text" class="form-control" #tenSV />
+</div>
+<div class="form-group">
+  <label>Lớp</label>
+  <input type="text" class="form-control" #lop />
+</div>
+
+<button
+  class="btn btn-success"
+  (click)="addStudent(maSV.value, tenSV.value, lop.value)"
+>
+  Thêm sinh viên
+</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Mã sinh viên</th>
+      <th>Họ tên</th>
+      <th>Lớp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students; index as idx">
+      <td>{{ idx + 1 }}</td>
+      <td>{{ student.id }}</td>
+      <td>{{ student.name }}</td>
+      <td>{{ student.className }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br />
+
+<!-- *ngSwitchCase -->
+<h3>3. *ngSwitchCase</h3>
+
+<br />
+
+<div class="form-group">
+  <label>Chọn màu sắc</label>
+  <select class="form-control" #color (change)="selectColor(color.value)">
+    <option value="black">Màu đen</option>
+    <option value="red">Màu đỏ</option>
+    <option value="pink">Màu hồng</option>
+    <option value="green">Màu xanh</option>
+  </select>
+</div>
+
+<div [ngSwitch]="selectedColor">
+  <div *ngSwitchCase="'red'" style="color: red">Màu đỏ</div>
+  <div *ngSwitchCase="'pink'" style="color: pink">Màu hồng</div>
+  <div *ngSwitchCase="'green'" style="color: green">Màu xanh</div>
+  <div *ngSwitchDefault style="color: black">Màu đen</div>
+</div>

@@ -16,11 +16,16 @@ import { CarouselComponent } from './exercise2/carousel/carousel.component';
 import { ProductsComponent } from './exercise2/products/products.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { FormsModule } from '@angular/forms';
+import { DirectiveComponent } from './directive/directive.component';
+import { StructuralComponent } from './directive/structural/structural.component';
+import { AttributeComponent } from './directive/attribute/attribute.component';
+import { HightlightDirective } from './my-directive/hightlight.directive';
+import { ButtonHoverDirective } from './my-directive/button-hover.directive';
 
 // Decorator
 @NgModule({
   declarations: [
-    // Nơi khai báo các component được quản lý bởi module này
+    // Nơi khai báo các component, directive, pipe được quản lý bởi module này
     AppComponent,
     HelloComponent,
     Exercise1Component,
@@ -34,6 +39,11 @@ import { FormsModule } from '@angular/forms';
     CarouselComponent,
     ProductsComponent,
     DataBindingComponent,
+    DirectiveComponent,
+    StructuralComponent,
+    AttributeComponent,
+    HightlightDirective,
+    ButtonHoverDirective,
   ],
   imports: [
     // Nơi khai báo các module khác được sử dụng trong module này

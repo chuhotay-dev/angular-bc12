@@ -1,0 +1,16 @@
+<h1>{{ title }}</h1>
+<h3>1. ngClass</h3>
+<!-- <h1 class="text-red bg-green">Chào mừng đến với CyberSoft!</h1> -->
+<h1 [ngClass]="{ 'text-red': isTextRed, 'bg-green': isBackgroundGreen }">
+  Chào mừng đến với CyberSoft!
+</h1>
+
+<br />
+
+<h3>2. ngStyle</h3>
+<!-- <h1 style="color: aqua; background: yellow;">Chào mừng đến với CyberSoft</h1> -->
+<h1 [ngStyle]="{color: isTextAqua ? 'aqua' : 'white', background: 'yellow'}">Chào mừng đến với CyberSoft</h1>
+
+<h3>3. Use custom directive</h3>
+<h1 appHightlight>Heloooooooo</h1>
+<button appButtonHover>Hello</button>
