@@ -21,6 +21,10 @@ import { StructuralComponent } from './directive/structural/structural.component
 import { AttributeComponent } from './directive/attribute/attribute.component';
 import { HightlightDirective } from './my-directive/hightlight.directive';
 import { ButtonHoverDirective } from './my-directive/button-hover.directive';
+import { InteractionComponent } from './interaction/interaction.component';
+import { ChildComponent } from './interaction/child/child.component';
+import { MovieListComponent } from './interaction/movie-list/movie-list.component';
+import { MovieItemComponent } from './interaction/movie-item/movie-item.component';
 
 // Decorator
 @NgModule({
@@ -44,6 +48,10 @@ import { ButtonHoverDirective } from './my-directive/button-hover.directive';
     AttributeComponent,
     HightlightDirective,
     ButtonHoverDirective,
+    InteractionComponent,
+    ChildComponent,
+    MovieListComponent,
+    MovieItemComponent,
   ],
   imports: [
     // Nơi khai báo các module khác được sử dụng trong module này
