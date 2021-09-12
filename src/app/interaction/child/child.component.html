@@ -1,0 +1,37 @@
+<h3>Thông tin cá nhân</h3>
+<p>Họ tên: {{ myFullName }}</p>
+<p>Tuổi: {{ myAge }}</p>
+<p>Tình trạng hôn nhân: {{ isMarried ? "Đã kết hôn" : "Độc thân" }}</p>
+
+<br />
+
+<h3>Thông tin người dùng</h3>
+<p>Username: {{ user.username }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Role: {{ user.role === 1 ? "Admin" : "Client" }}</p>
+
+<br />
+
+<h3>Danh sách người dùng</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.role === 1 ? "Admin" : "Client" }}</td>
+      <td>
+          <button class="btn btn-danger" (click)="deleteUser(user.id)">Xoá</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

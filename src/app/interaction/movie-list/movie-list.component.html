@@ -1,0 +1,12 @@
+<div class="container">
+  <h2 class="text-center my-5">Danh sách phim</h2>
+  <div class="row">
+    <div class="col-3" *ngFor="let movie of listMovie">
+      <app-movie-item
+        [movie]="movie"
+        (handleLike)="handleLike($event)"
+        (handleDislike)="handleDislike($event)"
+      ></app-movie-item>
+    </div>
+  </div>
+</div>

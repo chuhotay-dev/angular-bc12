@@ -1,0 +1,27 @@
+<div class="card">
+  <img
+    class="card-img-top"
+    style="height: 350px"
+    [src]="movieItem.hinhAnh"
+    alt=""
+  />
+  <div class="card-body">
+    <h4 class="card-title">{{ movieItem.tenPhim }}</h4>
+    <p class="card-text">
+      {{
+        movieItem.moTa.length > 7
+          ? movieItem.moTa.split(" ").slice(0, 6).join(" ") + "..."
+          : movieItem.moTa
+      }}
+    </p>
+    <span class="mr-2">Like: {{ movieItem.like }}</span>
+    <span>Dislike: {{ movieItem.dislike }}</span>
+    <br />
+    <button class="btn btn-primary mr-2" (click)="handleLike(movieItem.maPhim)">
+      Like
+    </button>
+    <button class="btn btn-danger" (click)="handleDislike(movieItem.maPhim)">
+      Dislike
+    </button>
+  </div>
+</div>
