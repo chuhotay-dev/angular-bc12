@@ -1,0 +1,24 @@
+<div class="form-group">
+  <label>Tài khoản: </label>
+  <input type="text" class="form-control" #taiKhoan />
+</div>
+<div class="form-group">
+  <label>Email: </label>
+  <input type="text" class="form-control" #email />
+</div>
+<div class="form-group">
+  <label>Mã loại người dùng: </label>
+  <input type="text" class="form-control" #maLoaiNguoiDung />
+</div>
+<button
+  class="btn btn-info"
+  (click)="
+    addAccount({
+      taiKhoan: taiKhoan.value,
+      email: email.value,
+      maLoaiNguoiDung: maLoaiNguoiDung.value
+    })
+  "
+>
+  Thêm tài khoản
+</button>

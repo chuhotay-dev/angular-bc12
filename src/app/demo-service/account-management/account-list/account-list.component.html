@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Tài khoản</th>
+            <th>Email</th>
+            <th>Mã loại người dùng</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of listAccount; index as idx">
+            <td>{{ idx + 1 }}</td>
+            <td>{{ account.taiKhoan }}</td>
+            <td>{{ account.email }}</td>
+            <td>{{ account.maLoaiNguoiDung }}</td>
+        </tr>
+    </tbody>
+</table>

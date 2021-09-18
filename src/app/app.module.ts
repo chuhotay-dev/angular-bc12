@@ -1,7 +1,13 @@
+// Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+
+// Components
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { Exercise1Component } from './exercise1/exercise1.component';
@@ -25,6 +31,18 @@ import { InteractionComponent } from './interaction/interaction.component';
 import { ChildComponent } from './interaction/child/child.component';
 import { MovieListComponent } from './interaction/movie-list/movie-list.component';
 import { MovieItemComponent } from './interaction/movie-item/movie-item.component';
+import { MaterialComponent } from './material/material.component';
+import { DemoServiceComponent } from './demo-service/demo-service.component';
+import { FirstComponent } from './demo-service/first/first.component';
+import { SecondComponent } from './demo-service/second/second.component';
+import { AccountManagementComponent } from './demo-service/account-management/account-management.component';
+import { AccountListComponent } from './demo-service/account-management/account-list/account-list.component';
+import { AddAccountComponent } from './demo-service/account-management/add-account/add-account.component';
+import { HomeComponent } from './components/home/home.component';
+import { TheaterComponent } from './components/theater/theater.component';
+import { ReviewComponent } from './components/review/review.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 // Decorator
 @NgModule({
@@ -52,12 +70,28 @@ import { MovieItemComponent } from './interaction/movie-item/movie-item.componen
     ChildComponent,
     MovieListComponent,
     MovieItemComponent,
+    MaterialComponent,
+    DemoServiceComponent,
+    FirstComponent,
+    SecondComponent,
+    AccountManagementComponent,
+    AccountListComponent,
+    AddAccountComponent,
+    HomeComponent,
+    TheaterComponent,
+    ReviewComponent,
+    ContactComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     // Nơi khai báo các module khác được sử dụng trong module này
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule
   ],
   providers: [], // Nơi khai báo các service cần dùng cho module này
   bootstrap: [AppComponent], // Nơi khai báo component chạy đầu tiên của module này
