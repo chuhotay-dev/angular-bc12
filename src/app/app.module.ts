@@ -43,6 +43,11 @@ import { TheaterComponent } from './components/theater/theater.component';
 import { ReviewComponent } from './components/review/review.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsComponent } from './forms/forms.component';
+import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
+import { ReactiveComponent } from './forms/reactive/reactive.component';
 
 // Decorator
 @NgModule({
@@ -82,6 +87,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ReviewComponent,
     ContactComponent,
     PageNotFoundComponent,
+    MovieDetailComponent,
+    FormsComponent,
+    TemplateDrivenComponent,
+    ReactiveComponent,
   ],
   imports: [
     // Nơi khai báo các module khác được sử dụng trong module này
@@ -91,7 +100,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     BrowserAnimationsModule,
     MatButtonModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
   ],
   providers: [], // Nơi khai báo các service cần dùng cho module này
   bootstrap: [AppComponent], // Nơi khai báo component chạy đầu tiên của module này

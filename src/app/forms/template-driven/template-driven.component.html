@@ -1,0 +1,52 @@
+<div class="container">
+  <form
+    class="mt-5 mx-5"
+    #myForm="ngForm"
+    (ngSubmit)="onSubmitForm(myForm.value)"
+  >
+    <div class="form-group">
+      <label>Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        ngModel
+        #email="ngModel"
+        required
+        (keyup)="log(email)"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="email.errors && (email.touched || email.dirty)"
+      >
+        <div *ngIf="email.errors['required']">Vui lòng nhập email!</div>
+        <!-- <div *ngIf="email.errors['pattern']">Email không đúng định dạng!</div> -->
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        ngModel
+        required
+        minlength="7"
+        maxlength="12"
+        #password="ngModel"
+      />
+      <div
+        class="alert alert-danger"
+        *ngIf="password.errors && (password.touched || password.dirty)"
+      >
+        <div *ngIf="password.errors['required']">Vui lòng nhập mật khẩu</div>
+        <div
+          *ngIf="password.errors['minlength'] || password.errors['maxlength']"
+        >
+          Vui lòng nhập từ 7 đến 12 ký tự
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+  </form>
+</div>
