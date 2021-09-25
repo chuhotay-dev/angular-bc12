@@ -21,7 +21,7 @@ import { FooterEx2Component } from './exercise2/footer-ex2/footer-ex2.component'
 import { CarouselComponent } from './exercise2/carousel/carousel.component';
 import { ProductsComponent } from './exercise2/products/products.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectiveComponent } from './directives/directive.component';
 import { StructuralComponent } from './directives/structural/structural.component';
 import { AttributeComponent } from './directives/attribute/attribute.component';
@@ -102,6 +102,7 @@ import { ReactiveComponent } from './forms/reactive/reactive.component';
     MatDividerModule,
     MatIconModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [], // Nơi khai báo các service cần dùng cho module này
   bootstrap: [AppComponent], // Nơi khai báo component chạy đầu tiên của module này

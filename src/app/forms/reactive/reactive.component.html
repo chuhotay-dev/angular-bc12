@@ -1,1 +1,44 @@
-<p>reactive works!</p>
+<div class="container">
+  <form class="mx-5 mt-5" [formGroup]="myForm" (ngSubmit)="onSubmitForm()">
+    <div class="form-group">
+      <label>Email address</label>
+      <input type="email" class="form-control" formControlName="email" />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          myForm.get('email')?.invalid &&
+          (myForm.get('email')?.touched || myForm.get('email')?.dirty)
+        "
+      >
+        <div *ngIf="myForm.get('email')?.errors?.required">
+          Vui lòng nhập email
+        </div>
+        <div *ngIf="myForm.get('email')?.errors?.email">Email không hợp lệ</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password" />
+      <div
+        class="alert alert-danger"
+        *ngIf="
+          myForm.get('password')?.invalid &&
+          (myForm.get('password')?.touched || myForm.get('password')?.dirty)
+        "
+      >
+        <div *ngIf="myForm.get('password')?.errors?.required">
+          Vui lòng nhập password
+        </div>
+        <div
+          *ngIf="
+            myForm.get('password')?.errors?.minlength ||
+            myForm.get('password')?.errors?.maxlength
+          "
+        >
+          Mật khẩu phải từ 7 đến 12 ký tự
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+  </form>
+</div>
